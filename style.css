@@ -137,6 +137,8 @@
 }
 
 #price-item {
+  display: flex;
+  justify-content: space-between;
   text-align: end;
   padding: 10px;
 }
@@ -172,4 +174,20 @@ footer {
   margin-top: 10px;
   padding: 5px;
   text-align: center;
+}
+
+/* responsividade */
+@media (max-width: 700px) {
+  #header {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #header h1 {
+    display: none;
+  }
+
+  #btn-search {
+    display: none;
+  }
 }
