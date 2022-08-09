@@ -1,0 +1,175 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* header */
+#header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  position: fixed;
+  width: 100%;
+}
+
+#header h1 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#header input {
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+#header button {
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+#header button:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.margin-header {
+  margin: 10px 30px;
+}
+
+/* main */
+#container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* container Item */
+#container-items {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12vh;
+}
+
+.item {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 10px 7px;
+  text-align: center;
+  width: 250px;
+}
+
+.span-id-item {
+  display: none;
+}
+
+.span-name-item {
+  background-color: lightgray;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-radius: 5px 5px 0px 0px;
+  height: 140px;
+  padding: 10px 5px;
+  text-align: center;
+  width: 250px
+}
+
+.img-item {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  height: 95px;
+  padding-left: 78px;
+  padding-right: 78px;
+  width: 250px;
+}
+
+.span-price-item {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0px 0px 5px 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.button-item {
+  background-color: lightgray;
+  border: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 3px;
+  width: 100%;
+}
+
+.button-item:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+
+/* Carrinho de compras */
+.see-cart {
+  background-color: white;
+  align-items: stretch;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  margin-top: 10vh;
+  text-align: center;
+  width: 280px;
+  position: fixed;
+}
+
+.cart {
+  display: none;
+}
+
+#price-item {
+  text-align: end;
+  padding: 10px;
+}
+
+#title-cart {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+.img-cart {
+  border-radius: 50%;
+  height: 50px;
+}
+
+.li-cart-item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.li-cart-item:hover {
+  background-color: lightgray;
+}
+
+/* footer */
+footer {
+  background-color: gray;
+  border-top: 2px solid black;
+  color: black;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+}

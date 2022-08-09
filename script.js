@@ -10,8 +10,10 @@ const itemPrice = document.querySelector('#price');
 
 /* Botão de pesquisa  */
 const clickBtnSearch = () => {
-  const valueInputItens = inputItens.value;
-  createArrObjectItem(valueInputItens);
+  if(inputItens.value != '') {
+    const valueInputItens = inputItens.value;
+    createArrObjectItem(valueInputItens);
+  }
 }
 
 btnSearch.addEventListener('click', clickBtnSearch);
@@ -24,7 +26,7 @@ document.addEventListener('keydown', (event) => {
 
 /* Botão delete carrinho */
 emptierCart.addEventListener('click', () => {
-  itemPrice.innerHTML = 0;
+  itemPrice.innerHTML = "0.00";
   itemsList.innerHTML = '';
   numberItem.innerHTML = 0;
 });
@@ -145,7 +147,7 @@ const clickButtonItem = () => {
 const createButtonItem = () => {
   const buttonItem = document.createElement('button');
   buttonItem.addEventListener('click', clickButtonItem);
-  buttonItem.innerText = 'Adicionar';
+  buttonItem.innerText = 'Adicionar ao Carrinho';
   buttonItem.classList = 'button-item';
   return buttonItem;
 }
@@ -173,4 +175,8 @@ const createArrObjectItem = async (value) => {
     price: element.price
   }));
   arrObjectItem.forEach(element => createItem(element));
+}
+
+window.onload = () => {
+  createArrObjectItem();
 }
