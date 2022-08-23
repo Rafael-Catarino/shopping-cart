@@ -6,33 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="./css/item.css">
+  <link rel="stylesheet" href="./css/cartItem.css">
+  <link rel="stylesheet" href="./css/footer.css">
   <title>ShopingCart</title>
 </head>
 
 <body>
   <!-- header -->
-  <header id="header">
-    <h1 class="margin-header">ShopingCart</h1>
-    <div class="margin-header">
-      <input type="text" name="" id="input-itens" placeholder="Buscar">
-      <button id="btn-search">Pesquisar</button>
+  <header class="header">
+    <h1 class="header__title header__margin">ShopingCart</h1>
+    <div class="header__margin">
+      <input class="header__input input__itens" type="text" name="" placeholder="Buscar">
+      <button class="header__button header__btn__search header__btn--disappeared" >Pesquisar</button>
     </div>
-    <button id="cart-button" class="margin-header">🛒 = <span class="nunber-item">0</span></button>
+    <button class="header__button header__button__card header__margin">🛒 = <span class="number__item">0</span></button>
   </header>
   <!-- main -->
-  <main id="container">
+  <main class="container">
     <!-- section items -->
-    <section id="container-items"></section>
+    <section class="container__items items"></section>
     <!-- section items selecionados-->
-    <section id="container-cart-items" class="cart">
-      <span id="title-cart">Carrinho de Compras</span>
-      <button id="emptier-cart">Esvaziar o Carrinho</button>
-      <ol id="items-list"></ol>
-      <div id="price-item"><span>Total: R$ </span><span id="price">0.00</span></div>
+    <section class="container__cart__items cart">
+      <span class="title__cart">Carrinho de Compras</span>
+      <button class="emptier__cart">Esvaziar o Carrinho</button>
+      <ol class="items__list"></ol>
+      <div class="price__item"><span>Total: R$ </span><span class="price">0.00</span></div>
     </section>
   </main>
-  <footer>
+  <footer class="footer">
     <p>Desenvolvido por Rafael dos Santos Catarino </p>
   </footer>
   <script type="module" src="script.js"></script>

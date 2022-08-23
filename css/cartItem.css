@@ -1,0 +1,46 @@
+.see__cart {
+  background-color: white;
+  align-items: stretch;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  margin-top: 10vh;
+  text-align: center;
+  width: 280px;
+  position: fixed;
+}
+
+.cart {
+  display: none;
+}
+
+.price__item {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  padding: 10px;
+}
+
+.title__cart {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+.img__cart {
+  border-radius: 50%;
+  height: 50px;
+}
+
+.li__cart__item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.li__cart__item:hover {
+  background-color: lightgray;
+}

@@ -1,12 +1,12 @@
-const cartButton = document.querySelector('#cart-button');
-const containerCartItems = document.querySelector('#container-cart-items');
-const containerItems = document.querySelector('#container-items');
-const btnSearch = document.querySelector('#btn-search');
-const inputItens = document.querySelector('#input-itens');
-const itemsList = document.querySelector('#items-list');
-const emptierCart = document.querySelector('#emptier-cart');
-const numberItem = document.querySelector('.nunber-item');
-const itemPrice = document.querySelector('#price');
+const btnSearch = document.querySelector('.header__btn__search');
+const cartButton = document.querySelector('.header__button__card');
+const containerCartItems = document.querySelector('.container__cart__items');
+const containerItems = document.querySelector('.container__items');
+const inputItens = document.querySelector('.input__itens');
+const itemsList = document.querySelector('.items__list');
+const emptierCart = document.querySelector('.emptier__cart');
+const numberItem = document.querySelector('.number__item');
+const itemPrice = document.querySelector('.price');
 
 /* Botão de pesquisa  */
 const clickBtnSearch = () => {
@@ -33,11 +33,11 @@ emptierCart.addEventListener('click', () => {
 
 /* Botão do carrinho cabaçalho */
 const viewCart = () => {
-  if (containerCartItems.classList == 'see-cart') {
+  if (containerCartItems.classList == 'see__cart') {
     containerCartItems.classList.remove();
     containerCartItems.classList = 'cart';
   } else {
-    containerCartItems.classList = 'see-cart';
+    containerCartItems.classList = 'see__cart';
   }
 }
 
@@ -54,7 +54,7 @@ const fetchItem = (value) => {
 const createImgItem = (img) => {
   const imgItem = document.createElement('img');
   imgItem.src = img;
-  imgItem.classList = 'img-item';
+  imgItem.classList = 'img__item';
   return imgItem;
 }
 
@@ -62,7 +62,7 @@ const createImgItem = (img) => {
 const createSpanIdItem = (id) => {
   const spanNameItem = document.createElement('span');
   spanNameItem.innerText = id;
-  spanNameItem.classList = 'span-id-item';
+  spanNameItem.classList = 'span__id__item';
   return spanNameItem;
 }
 
@@ -70,7 +70,7 @@ const createSpanIdItem = (id) => {
 const createSpanNameItem = (name) => {
   const spanNameItem = document.createElement('span');
   spanNameItem.innerText = name;
-  spanNameItem.classList = 'span-name-item';
+  spanNameItem.classList = 'span__name__item';
   return spanNameItem;
 }
 
@@ -78,7 +78,7 @@ const createSpanNameItem = (name) => {
 const createSpanPriceItem = (price) => {
   const spanPriceItem = document.createElement('span');
   spanPriceItem.innerText = `R$ ${price.toString().replace('.', ',')}`;
-  spanPriceItem.classList = 'span-price-item';
+  spanPriceItem.classList = 'span__price__item';
   return spanPriceItem;
 }
 
@@ -86,7 +86,7 @@ const createSpanPriceItem = (price) => {
 const createImgItemCart = (img) => {
   const imgCart = document.createElement('img');
   imgCart.src = img;
-  imgCart.classList = 'img-cart';
+  imgCart.classList = 'img__cart';
   return imgCart;
 }
 
@@ -94,7 +94,7 @@ const createImgItemCart = (img) => {
 const createSpanItemCart = (name, price) => {
   const imgCart = document.createElement('span');
   imgCart.innerText = `${name} | R$ ${price}`;
-  imgCart.classList = 'span-cart';
+  imgCart.classList = 'span__cart';
   return imgCart;
 }
 
@@ -121,7 +121,7 @@ const createItemCart = ({ thumbnail: img, title: name, price }) => {
   });
   liCartItem.appendChild(createImgItemCart(img));
   liCartItem.appendChild(createSpanItemCart(name, price));
-  liCartItem.className = 'li-cart-item';
+  liCartItem.className = 'li__cart__item';
   sumPriceItem(price);
   itemsList.appendChild(liCartItem);
 }
@@ -148,7 +148,7 @@ const createButtonItem = () => {
   const buttonItem = document.createElement('button');
   buttonItem.addEventListener('click', clickButtonItem);
   buttonItem.innerText = 'Adicionar ao Carrinho';
-  buttonItem.classList = 'button-item';
+  buttonItem.classList = 'button__item';
   return buttonItem;
 }
 
