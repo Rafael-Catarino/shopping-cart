@@ -98,12 +98,14 @@ const createSpanItemCart = (name, price) => {
   return imgCart;
 }
 
+/* Somando os preços do carrinho */
 const sumPriceItem = (price) => {
   let value = parseFloat(itemPrice.innerHTML);
   value = value + price;
   itemPrice.innerHTML = value.toFixed(2);
 }
 
+/* Subtraindo os preços do carrinho */
 const decreasePriceItem = (price) => {
   let value = parseFloat(itemPrice.innerHTML);
   value = value - price;
@@ -164,9 +166,17 @@ const createItem = (obj) => {
   containerItems.appendChild(divItem);
 }
 
+const loadingItems = () => {
+  const imgGif = document.createElement('img');
+  imgGif.classList = 'loading';
+  imgGif.src = './image/carregando.gif';
+  containerItems.appendChild(imgGif);
+}
+
 /* Criando um array de objeto com a resposta do fetch */
 const createArrObjectItem = async (value) => {
   containerItems.innerText = '';
+  loadingItems();
   const responseFetch = await fetchItem(value);
   const arrObjectItem = responseFetch.results.map((element) => ({
     id: element.id,
@@ -174,8 +184,13 @@ const createArrObjectItem = async (value) => {
     image: element.thumbnail,
     price: element.price
   }));
-  arrObjectItem.forEach(element => createItem(element));
+  setTimeout(() => {
+    document.querySelector('.loading').remove();
+    arrObjectItem.forEach(element => createItem(element));
+  }, "1000")
 }
+
+
 
 window.onload = () => {
   createArrObjectItem();
