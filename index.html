@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="./css/item.css" />
+    <link rel="stylesheet" href="./css/cartItem.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <title>ShopingCart</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="./css/item.css">
-  <link rel="stylesheet" href="./css/cartItem.css">
-  <link rel="stylesheet" href="./css/footer.css">
-  <title>ShopingCart</title>
-</head>
-
-<body>
-  <!-- header -->
-  <header class="header">
-    <h1 class="header__title header__margin">ShopingCart</h1>
-    <div class="header__margin">
-      <button class="header__button header__btn__search header__btn--disappeared" >	
-        &#128269;</button>
-      <input class="header__input input__itens" type="text" name="" placeholder="Buscar">
-    </div>
-    <button class="header__button header__button__card header__margin">🛒 = <span class="number__item">0</span></button>
-  </header>
-  <!-- main -->
-  <main class="container">
-    <!-- section items -->
-    <section class="container__items items"></section>
-    <!-- section items selecionados-->
-    <section class="container__cart__items cart">
-      <span class="title__cart">Carrinho de Compras</span>
-      <button class="emptier__cart">Esvaziar o Carrinho</button>
-      <ol class="items__list"></ol>
-      <div class="price__item"><span>Total: R$ </span><span class="price">0.00</span></div>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>Desenvolvido por Rafael dos Santos Catarino </p>
-  </footer>
-  <script type="module" src="script.js"></script>
-</body>
-
+  <body>
+    <!-- header -->
+    <header class="header">
+      <h1 class="header__title header__margin">ShopingCart</h1>
+      <div class="header__margin">
+        <button
+          class="header__button header__btn__search header__btn--disappeared"
+        >
+          &#128269;
+        </button>
+        <input
+          class="header__input input__itens"
+          type="text"
+          name=""
+          placeholder="Buscar"
+        />
+      </div>
+      <button class="header__button header__button__card header__margin">
+        <img
+          class="header__button__img"
+          src="image/supermarket-cart.png"
+          alt="imagem de um carrinho de supermercado"
+        />
+      </button>
+    </header>
+    <!-- main -->
+    <main class="container">
+      <!-- section items -->
+      <section class="container__items items"></section>
+      <!-- section items selecionados-->
+      <section class="container__cart__items cart see__cart">
+        <span class="title__cart">Carrinho de Compras</span>
+        <button class="emptier__cart">Esvaziar o Carrinho</button>
+        <ol class="items__list"></ol>
+        <div class="price__item">
+          <span>Total: R$ </span><span class="price">0.00</span>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Desenvolvido por <span>Rafael dos Santos Catarino</span></p>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

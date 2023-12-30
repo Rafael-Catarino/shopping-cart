@@ -1,7 +1,7 @@
 .header {
   align-items: center;
-  background-color: #466067;
-  border-bottom: 1px solid #cfc89a;
+  background-color: #273142;
+  border-bottom: 1px solid #c8c8a9;
   display: flex;
   justify-content: space-around;
   height: 10vh;
@@ -10,35 +10,39 @@
 }
 
 .header__title {
-  color: #cfc89a;
-  font-family: 'Times New Roman', Times, serif;
+  color: #c8c8a9;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .header__input {
-  border: 1px solid black;
-  border-radius: 0px 10px 10px 0px;
+  width: 30vw;
+  border: none;
+  border-left: 1px solid rgb(44, 44, 44);
+  border-radius: 2px;
   box-shadow: 0 0 0 0;
-  margin: -6px;
   outline: 0;
+  font-size: 12pt;
+  padding: 10px;
+  margin-left: -6px;
+}
+
+.header__button {
+  background-color: transparent;
+  border: none;
   padding: 10px;
 }
 
 .header__btn__search {
-  border-radius: 10px 0px 0px 10px ;
-}
-
-.header__button {
-  border: 1px solid black;
-  padding: 10px;
+  border-radius: 2px;
+  background-color: white;
 }
 
 .header__button:hover {
-  background-color: lightgray;
   cursor: pointer;
 }
 
-.header__button__card {
-  border-radius: 10px;
+.header__button__img {
+  width: 25px;
 }
 
 .header__margin {
