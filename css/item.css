@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 12vh;
+  padding-top: 12vh;
   width: 100vw;
 }
 
@@ -24,15 +24,16 @@
 }
 
 .span__name__item {
-  background-color: lightgray;
+  background-color: #556270;
   border-top: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
+  color: #f7efd8;
   border-radius: 5px 5px 0px 0px;
   height: 140px;
   padding: 10px 5px;
   text-align: center;
-  width: 250px
+  width: 250px;
 }
 
 .img__item {
@@ -64,6 +65,12 @@
 }
 
 .button__item:hover {
-  background-color: gray;
+  background-color: #273142;
   cursor: pointer;
+  color: #c8c8a9;
+}
+
+.button__item:active {
+  background-color: #273142;
+  color: #c8c8a9;
 }
