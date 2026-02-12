@@ -151,15 +151,12 @@ const fetchItemCart = async (idItens) => {
 };
 
 /* Criando botão do item */
-const clickButtonItem = (event) => {
-  headerButtonImg.src = "./image/supermarket-cart2.png";
-  const idItens = event.target.parentNode.firstChild.innerText;
-  fetchItemCart(idItens);
-};
-
-const createButtonItem = () => {
+const createButtonItem = (id) => {
   const buttonItem = document.createElement("button");
-  buttonItem.addEventListener("click", clickButtonItem);
+  buttonItem.addEventListener("click", () => {
+    headerButtonImg.src = "./image/supermarket-cart2.png";
+    fetchItemCart(id);
+  });
   buttonItem.innerText = "Adicionar ao Carrinho";
   buttonItem.classList = "button__item";
   return buttonItem;
@@ -173,7 +170,7 @@ const createItem = (obj) => {
   divItem.appendChild(createSpanNameItem(obj.name));
   divItem.appendChild(createImgItem(obj.image));
   divItem.appendChild(createSpanPriceItem(obj.price));
-  divItem.appendChild(createButtonItem());
+  divItem.appendChild(createButtonItem(obj.id));
   containerItems.appendChild(divItem);
 };
 
