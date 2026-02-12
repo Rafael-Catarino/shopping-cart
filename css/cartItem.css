@@ -22,8 +22,11 @@
   padding: 10px;
 }
 
+.span__cart {
+  font-family: "Inter", sans-serif;
+}
+
 .title__cart {
-  font-family: 'Times New Roman', Times, serif;
   font-size: large;
   font-weight: bolder;
   padding: 5px;
