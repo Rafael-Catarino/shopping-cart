@@ -17,13 +17,18 @@
 .header__input {
   width: 30vw;
   border: none;
-  border-left: 1px solid rgb(44, 44, 44);
-  border-radius: 2px;
+  border-left: 1px solid #ccc;
   box-shadow: 0 0 0 0;
   outline: 0;
   font-size: 12pt;
   padding: 10px;
   margin-left: -6px;
+}
+
+.header__search {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
 .header__button {

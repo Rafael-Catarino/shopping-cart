@@ -42,10 +42,18 @@ containerItems.addEventListener("click", () => {
 });
 
 /* Fazendo a requisição fetch */
-const fetchItem = (value) => {
-  const url = `https://api.mercadolibre.com/sites/MLB/search?q=${value}`;
-  const promise = fetch(url).then((response) => response.json());
-  return promise;
+const fetchItem = async (value) => {
+  let url = value
+    ? `https://dummyjson.com/products/search?q=${value}`
+    : `https://dummyjson.com/products`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Erro na rede");
+    return await response.json();
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+    throw error;
+  }
 };
 
 /* Criando a imagem do item */
@@ -129,23 +137,26 @@ const createItemCart = ({ thumbnail: img, title: name, price }) => {
 };
 
 /* Requisição fetch cart items  */
-const fetchItemCart = (idItens) => {
-  const url = `https://api.mercadolibre.com/items/${idItens}`;
-  fetch(url)
-    .then((promese) => promese.json())
-    .then((data) => createItemCart(data));
+const fetchItemCart = async (idItens) => {
+  try {
+    const url = `https://dummyjson.com/products/${idItens}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Não foi possível buscar o item");
+    const data = await response.json();
+    createItemCart(data);
+  } catch (error) {
+    console.error("Erro ao adicionar item ao carrinho:", error);
+    alert("Houve um problema ao adicionar o item. Tente novamente.");
+  }
 };
 
 /* Criando botão do item */
-const clickButtonItem = () => {
-  headerButtonImg.src = "./image/supermarket-cart2.png";
-  const idItens = event.target.parentNode.firstChild.innerText;
-  fetchItemCart(idItens);
-};
-
-const createButtonItem = () => {
+const createButtonItem = (id) => {
   const buttonItem = document.createElement("button");
-  buttonItem.addEventListener("click", clickButtonItem);
+  buttonItem.addEventListener("click", () => {
+    headerButtonImg.src = "./image/supermarket-cart2.png";
+    fetchItemCart(id);
+  });
   buttonItem.innerText = "Adicionar ao Carrinho";
   buttonItem.classList = "button__item";
   return buttonItem;
@@ -159,7 +170,7 @@ const createItem = (obj) => {
   divItem.appendChild(createSpanNameItem(obj.name));
   divItem.appendChild(createImgItem(obj.image));
   divItem.appendChild(createSpanPriceItem(obj.price));
-  divItem.appendChild(createButtonItem());
+  divItem.appendChild(createButtonItem(obj.id));
   containerItems.appendChild(divItem);
 };
 
@@ -172,19 +183,23 @@ const loadingItems = () => {
 
 /* Criando um array de objeto com a resposta do fetch */
 const createArrObjectItem = async (value) => {
-  containerItems.innerText = "";
-  loadingItems();
-  const responseFetch = await fetchItem(value);
-  const arrObjectItem = responseFetch.results.map((element) => ({
-    id: element.id,
-    name: element.title,
-    image: element.thumbnail,
-    price: element.price,
-  }));
-  setTimeout(() => {
-    document.querySelector(".loading").remove();
+  try {
+    containerItems.innerText = "";
+    loadingItems();
+    const responseFetch = await fetchItem(value);
+    const loader = document.querySelector(".loading");
+    if (loader) loader.remove();
+    const arrObjectItem = responseFetch.products.map((element) => ({
+      id: element.id,
+      name: element.title,
+      image: element.thumbnail,
+      price: element.price,
+      description: element.description,
+    }));
     arrObjectItem.forEach((element) => createItem(element));
-  }, "1000");
+  } catch (error) {
+    containerItems.innerHTML = "<p>Erro ao carregar produtos.</p>";
+  }
 };
 
 window.onload = () => {
